@@ -48,12 +48,15 @@
 ```javascript
 const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+// Require the necessary discord.js classes
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// Create a new client instance
 
 client.once('ready', () => {
 	console.log('c:');
 });
+// When the client is ready, run this code (only once)
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
@@ -70,6 +73,7 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(token);
+// Login to Discord with your client's token
 ```
 » For the Commands you'll need to install `@discordjs/rest`, you can do than with `npm install @discordjs/rest`
 
